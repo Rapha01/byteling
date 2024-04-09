@@ -1,0 +1,28 @@
+{
+  "name": "salzachweb",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "node": "node src/app.js",
+    "nodemon": "nodemon -L src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rapha01/salzachweb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rapha01/salzachweb/issues"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "homepage": "https://github.com/Rapha01/salzachweb#readme"
+}
