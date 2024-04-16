@@ -8,7 +8,7 @@ services:
     ports:
       - $WEB_PORT:$WEB_PORT
     depends_on:
-      - postgresdb
+      - postgresDb
     environment:
       - WEB_PORT=$WEB_PORT
       - POSTGRES_HOST=$POSTGRES_HOST
@@ -36,7 +36,7 @@ services:
     image: dpage/pgadmin4
     restart: unless-stopped
     depends_on:
-      - postgresdb
+      - postgresDb
     ports:
       - $PGADMIN_PORT:80
     environment:
