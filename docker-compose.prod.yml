@@ -9,7 +9,7 @@ services:
       - NODE_ENV=prod
     command: sh -c "npm run build && npm run node"
 
-  postgresdb:
+  postgresDb:
     container_name: salzachweb.postgresdb.prod
   
   pgAdmin:

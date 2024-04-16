@@ -17,7 +17,7 @@ services:
       - POSTGRES_DBNAME=$POSTGRES_DBNAME
       - POSTGRES_PORT=$POSTGRES_PORT
 
-  postgresdb:
+  postgresDb:
     image: postgres
     restart: unless-stopped
     environment:
@@ -32,7 +32,7 @@ services:
       - ./postgres/data:/var/lib/postgresql/data
       - ./postgres_init.sql:/docker-entrypoint-initdb.d/postgres_init.sql
 
-  pgadmin:
+  pgAdmin:
     image: dpage/pgadmin4
     restart: unless-stopped
     depends_on:

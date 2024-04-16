@@ -11,7 +11,7 @@ services:
       - .:/usr/src/app
     command: npm run nodemon
   
-  postgresdb:
+  postgresDb:
     container_name: salzachweb.postgresdb.dev.local
   
   pgAdmin:
