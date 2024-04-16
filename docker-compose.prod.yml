@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      dockerfile: Dockerfile.prod
+    environment:
+      - NODE_ENV=prod
+    command: sh -c "npm run build && npm run node"

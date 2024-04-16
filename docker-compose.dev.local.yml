@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      dockerfile: Dockerfile.dev.local
+    environment:
+      - NODE_ENV=dev.local
+    volumes:
+      - .:/usr/src/app
+    command: npm run nodemon
+    

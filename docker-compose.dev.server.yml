@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      dockerfile: Dockerfile.dev.server
+    environment:
+      - NODE_ENV=dev.server
+    command: sh -c "npm run build && npm run node"
+    
