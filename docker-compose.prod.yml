@@ -2,8 +2,15 @@ version: '3.8'
 
 services:
   web:
+    container_name: salzachweb.web.prod
     build:
       dockerfile: Dockerfile.prod
     environment:
       - NODE_ENV=prod
     command: sh -c "npm run build && npm run node"
+
+  postgresdb:
+    container_name: salzachweb.postgresdb.prod
+  
+  pgAdmin:
+    container_name: salzachweb.pgAdmin.prod

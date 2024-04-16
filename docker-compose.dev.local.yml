@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   web:
+    container_name: salzachweb.web.dev.local
     build:
       dockerfile: Dockerfile.dev.local
     environment:
@@ -9,4 +10,9 @@ services:
     volumes:
       - .:/usr/src/app
     command: npm run nodemon
-    
+  
+  postgresdb:
+    container_name: salzachweb.postgresdb.dev.local
+  
+  pgAdmin:
+    container_name: salzachweb.pgAdmin.dev.local

@@ -35,6 +35,8 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     restart: unless-stopped
+    depends_on:
+      - postgresdb
     ports:
       - $PGADMIN_PORT:80
     environment:
