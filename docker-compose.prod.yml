@@ -10,7 +10,7 @@ services:
     command: sh -c "npm run build && npm run node"
 
   postgresDb:
-    container_name: salzachweb.postgresdb.prod
+    container_name: salzachweb.postgresDb.prod
   
   pgAdmin:
     container_name: salzachweb.pgAdmin.prod

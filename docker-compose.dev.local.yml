@@ -12,7 +12,7 @@ services:
     command: npm run nodemon
   
   postgresDb:
-    container_name: salzachweb.postgresdb.dev.local
+    container_name: salzachweb.postgresDb.dev.local
   
   pgAdmin:
     container_name: salzachweb.pgAdmin.dev.local
