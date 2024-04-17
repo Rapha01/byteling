@@ -1,4 +1,9 @@
 on:
   push:
     branches:
-      - 'main'
+      - 'dev'
+
+jobs:
+  test:
+    steps:
+    - run: echo Test job successfull!
