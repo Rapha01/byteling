@@ -1,0 +1,9 @@
+on:
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  test:
+    steps:
+    - run: echo Test job successfull!
