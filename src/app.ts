@@ -9,7 +9,7 @@ const app: Express = express();
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 
-  console.log(`bbbb`);
+  console.log(`cccc`);
 });
 
 app.get("/", (req: Request, res: Response) => {
