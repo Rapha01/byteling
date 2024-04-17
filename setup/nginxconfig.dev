@@ -29,3 +29,7 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
+
+
+
+sudo certbot --register-unsafely-without-email --nginx -d dev.salzachweb.com -d pgadmin.dev.salzachweb.com -d dev.salzachweb.de -d pgadmin.dev.salzachweb.de -d dev.salzachweb.at -d pgadmin.dev.salzachweb.at -d salzachweb.com -d www.salzachweb.com -d pgadmin.salzachweb.com -d salzachweb.de -d www.salzachweb.de -d pgadmin.salzachweb.de -d salzachweb.at -d www.salzachweb.at -d pgadmin.salzachweb.at
