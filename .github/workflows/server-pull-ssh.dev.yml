@@ -20,5 +20,6 @@ jobs:
           script: | 
             cd salzachweb.dev
             git pull
+            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml build
             docker compose -f docker-compose.yml -f docker-compose.dev.server.yml down
-            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml up -d --build
+            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml up -d
