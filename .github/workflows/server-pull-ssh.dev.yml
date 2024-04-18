@@ -1,10 +1,19 @@
+name: Dev Deployment
+
 on:
   push:
     branches:
       - 'dev'
 
 jobs:
-  test:
+  deployment:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
-    - run: echo Test job successfull! DEV 2
+    uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: whoami

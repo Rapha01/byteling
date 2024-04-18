@@ -1,10 +1,13 @@
+name: Prod Deployment
+
 on:
   push:
     branches:
       - 'main'
 
 jobs:
-  test:
+  deployment:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
     - run: echo Test job successfull! PROD
