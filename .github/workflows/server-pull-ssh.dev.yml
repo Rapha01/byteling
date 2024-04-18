@@ -18,5 +18,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: | 
-            cd testfolder
-            touch test.actions
+            cd salzachweb.dev
+            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml down
+            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml up --build
