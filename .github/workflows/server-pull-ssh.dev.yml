@@ -19,5 +19,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: | 
             cd salzachweb.dev
+            git pull
             docker compose -f docker-compose.yml -f docker-compose.dev.server.yml down
-            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml up --build
+            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml up -d --build
