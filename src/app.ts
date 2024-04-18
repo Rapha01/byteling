@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("OK!");
+  res.send("OK!!");
 });
 
 console.log(process.env);
