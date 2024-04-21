@@ -18,12 +18,21 @@
     "url": "https://github.com/Rapha01/salzachweb/issues"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "envalid": "^8.0.0",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "bcryptjs": "^2.4.3",
+    "@types/bcryptjs": "^2.4.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "typescript": "^5.4.5",
     "@types/express": "^4.17.21",
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "jsonwebtoken": "^9.0.2",
+    "@types/jsonwebtoken": "^9.0.2",
+    "ejs": "^3.1.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",

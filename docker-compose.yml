@@ -35,6 +35,8 @@ services:
   pgAdmin:
     image: dpage/pgadmin4
     restart: unless-stopped
+    logging:
+      driver: none
     depends_on:
       - postgresDb
     ports:
