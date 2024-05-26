@@ -1,11 +1,13 @@
-CREATE TABLE users
+CREATE TABLE public.user
 (
     id SERIAL,
     username TEXT NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
-    role SMALLINT NOT NULL,
-    CONSTRAINT users_pkey PRIMARY KEY (id)
+    role TEXT NOT NULL,
+    is_email_verified BOOLEAN NOT NULL DEFAULT false,
+    email_verifycode TEXT NOT NULL DEFAULT '',
+    CONSTRAINT user_pkey PRIMARY KEY (id)
 );
 
-INSERT INTO users(username,email,password,role) VALUES ('admin', '', '123456', '0'); 
+INSERT INTO public.user (username,email,password,role,is_email_verified) VALUES ('admin', '', '123456', 'admin',true); 
