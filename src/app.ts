@@ -18,7 +18,7 @@ import AuthApiRoute from './routes/api.auth.route';
 import AdminSiteRoute from './routes/site.admin.route';
 import { Router } from 'express';
 // 4
-
+console.log('__dirname', __dirname);
 const router = Router();
 
 logger.error('Testerror');
@@ -41,9 +41,9 @@ class App {
   private async init() {
     //await initDatabase();
     this.app.use(express.urlencoded({ extended: false }));
-    this.app.set("views", path.join(__dirname, "./views"));
+    this.app.set("views", path.join(__dirname, "../src/views"));
     this.app.set("view engine", "ejs");
-    this.app.use(express.static(path.join(__dirname, "./public")));
+    this.app.use(express.static(path.join(__dirname, "../src/public")));
     this.initializeMiddlewares();
     this.initializeRoutes();
     this.initializeErrorHandling();

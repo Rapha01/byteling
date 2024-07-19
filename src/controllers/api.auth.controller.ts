@@ -8,7 +8,6 @@ import { ApiError } from '../exceptions/ApiError';
 import { HttpError } from '../exceptions/HttpError';
 import { emailService } from '../services/';
 import config from '../config/config';
-import { userModel } from 'models';
 
 class AuthController {
   public register = async (req: Request, res: Response, next: NextFunction) => {
