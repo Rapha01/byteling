@@ -20,6 +20,6 @@ jobs:
           script: | 
             cd byteling.dev
             git pull
-            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml build web
-            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml down web
-            docker compose -f docker-compose.yml -f docker-compose.dev.server.yml up -d web
+            docker compose -f docker-compose.yml -f docker-compose.dev.remote.yml build web
+            docker compose -f docker-compose.yml -f docker-compose.dev.remote.yml down web
+            docker compose -f docker-compose.yml -f docker-compose.dev.remote.yml up -d web
