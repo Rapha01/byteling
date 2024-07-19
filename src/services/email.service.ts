@@ -28,7 +28,7 @@ const transporter = nodemailer.createTransport(connection);
 
 class EmailService {
   public async sendRegisterMail(userId: number, email: string, code: string): Promise<boolean> {
-    const html = await ejs.renderFile('./src/views/email/register.ejs', { verificationUrl:`https://salzachweb.com/login?userId=${userId}&code=${code}`});
+    const html = await ejs.renderFile('./src/views/email/register.ejs', { verificationUrl:`https://byteling.com/login?userId=${userId}&code=${code}`});
 
     var message = {
       from: config.MAIL_USER,

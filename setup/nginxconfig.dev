@@ -2,7 +2,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name dev.salzachweb.com dev.salzachweb.at dev.salzachweb.de;
+    server_name dev.byteling.com dev.byteling.at dev.byteling.de;
 
     location / {
         proxy_pass http://localhost:4001;
@@ -18,7 +18,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name pgadmin.dev.salzachweb.com pgadmin.dev.salzachweb.at pgadmin.dev.salzachweb.de;
+    server_name pgadmin.dev.byteling.com pgadmin.dev.byteling.at pgadmin.dev.byteling.de;
 
     location / {
         proxy_pass http://localhost:8001;
@@ -32,4 +32,4 @@ server {
 
 
 
-sudo certbot --register-unsafely-without-email --nginx -d dev.salzachweb.com -d pgadmin.dev.salzachweb.com -d dev.salzachweb.de -d pgadmin.dev.salzachweb.de -d dev.salzachweb.at -d pgadmin.dev.salzachweb.at -d salzachweb.com -d www.salzachweb.com -d pgadmin.salzachweb.com -d salzachweb.de -d www.salzachweb.de -d pgadmin.salzachweb.de -d salzachweb.at -d www.salzachweb.at -d pgadmin.salzachweb.at
+sudo certbot --register-unsafely-without-email --nginx -d dev.byteling.com -d pgadmin.dev.byteling.com -d dev.byteling.de -d pgadmin.dev.byteling.de -d dev.byteling.at -d pgadmin.dev.byteling.at -d byteling.com -d www.byteling.com -d pgadmin.byteling.com -d byteling.de -d www.byteling.de -d pgadmin.byteling.de -d byteling.at -d www.byteling.at -d pgadmin.byteling.at

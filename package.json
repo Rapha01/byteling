@@ -1,5 +1,5 @@
 {
-  "name": "salzachweb",
+  "name": "byteling",
   "version": "0.1.0",
   "description": "",
   "main": "src/app.js",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rapha01/salzachweb.git"
+    "url": "git+https://github.com/Rapha01/byteling.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rapha01/salzachweb/issues"
+    "url": "https://github.com/Rapha01/byteling/issues"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -48,5 +48,5 @@
     "nodemon": "^2.0.15",
     "ts-node": "^10.9.2"
   },
-  "homepage": "https://github.com/Rapha01/salzachweb#readme"
+  "homepage": "https://github.com/Rapha01/byteling#readme"
 }

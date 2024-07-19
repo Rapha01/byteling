@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    container_name: salzachweb.web.prod
+    container_name: byteling.web.prod
     build:
       dockerfile: Dockerfile.prod
     environment:
@@ -10,7 +10,7 @@ services:
     command: sh -c "npm run build && npm run node"
 
   postgresDb:
-    container_name: salzachweb.postgresDb.prod
+    container_name: byteling.postgresDb.prod
   
   pgAdmin:
-    container_name: salzachweb.pgAdmin.prod
+    container_name: byteling.pgAdmin.prod

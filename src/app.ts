@@ -68,7 +68,6 @@ class App {
     this.app.use(cookieParser());
     this.app.use(authMiddleware);
     this.app.use(express.urlencoded({ extended: true }));
-    
   }
 
   private initializeRoutes() {
@@ -93,3 +92,12 @@ class App {
 const app: App = new App();
 
 app.listen();
+
+/*
+let i = 0;
+while (true) {
+  i++
+
+  if (i % 10000)
+    console.log(i);
+}*/

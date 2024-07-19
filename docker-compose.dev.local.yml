@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    container_name: salzachweb.web.dev.local
+    container_name: byteling.web.dev.local
     build:
       dockerfile: Dockerfile.dev.local
     environment:
@@ -12,7 +12,7 @@ services:
     command: npm run nodemon
   
   postgresDb:
-    container_name: salzachweb.postgresDb.dev.local
+    container_name: byteling.postgresDb.dev.local
   
   pgAdmin:
-    container_name: salzachweb.pgAdmin.dev.local
+    container_name: byteling.pgAdmin.dev.local

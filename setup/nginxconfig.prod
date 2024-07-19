@@ -2,7 +2,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name salzachweb.com www.salzachweb.com salzachweb.at www.salzachweb.at salzachweb.de www.salzachweb.de;
+    server_name byteling.com www.byteling.com byteling.at www.byteling.at byteling.de www.byteling.de;
 
     location / {
         proxy_pass http://localhost:4000;
@@ -18,7 +18,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name pgadmin.salzachweb.com pgadmin.salzachweb.at pgadmin.salzachweb.de;
+    server_name pgadmin.byteling.com pgadmin.byteling.at pgadmin.byteling.de;
 
     location / {
         proxy_pass http://localhost:8000;
