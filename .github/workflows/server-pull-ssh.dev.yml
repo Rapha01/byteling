@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: | 
-            cd salzachweb.dev
+            cd byteling.dev
             git pull
             docker compose -f docker-compose.yml -f docker-compose.dev.server.yml build web
             docker compose -f docker-compose.yml -f docker-compose.dev.server.yml down web
