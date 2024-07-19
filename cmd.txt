@@ -1,1 +1,5 @@
 docker compose -f docker-compose.yml -f docker-compose.dev.local.yml up --attach web
+
+git checkout main
+git merge dev
+git checkout dev
