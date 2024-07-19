@@ -6,7 +6,7 @@
   "scripts": {
     "nodemon": "nodemon --legacy-watch src/app.ts",
     "build": "tsc -p .",
-    "node": "NODE_PATH=./build node build/app.js"
+    "node": "NODE_PATH=./build node build/src/app.js"
   },
   "repository": {
     "type": "git",
