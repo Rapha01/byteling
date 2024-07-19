@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: byteling.web.dev.remote
+    build:
+      dockerfile: Dockerfile.dev.remote
+    environment:
+      - NODE_ENV=dev.remote
+    command: sh -c "npm run build && npm run node"
+    
+  postgresDb:
+    container_name: byteling.postgresDb.dev.remote
+  
+  pgAdmin:
+    container_name: byteling.pgAdmin.dev.remote
