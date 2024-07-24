@@ -38,6 +38,9 @@ export const secondsToDhms = (seconds: number) => {
   return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 
+export const sleep = (milliseconds: number) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
 
 /*
 export const handleError = (req: Request, err: any) => {

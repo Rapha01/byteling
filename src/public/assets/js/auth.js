@@ -21,7 +21,7 @@ const register = async (e) => {
     });
     const data = await result.json();
     console.log(data);
-termsService
+
     if (data.errors) {
         for (let error of data.errors)
             createToast('error','Error',error.message);

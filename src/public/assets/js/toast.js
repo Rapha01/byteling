@@ -13,7 +13,7 @@ function createToast(type,title,message) {
     toastHeaderDiv.appendChild(titleEl);
     const timeEl = document.createElement("small");
     timeEl.setAttribute('class','text-muted');
-    timeEl.innerHTML = 'just now';
+    timeEl.innerHTML = 'Gerade eben';
     toastHeaderDiv.appendChild(timeEl);
     const dismissEl = document.createElement("button");
     dismissEl.setAttribute('type','button');

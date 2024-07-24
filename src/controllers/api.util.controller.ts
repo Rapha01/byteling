@@ -1,19 +1,17 @@
 import { NextFunction, Request, Response } from 'express';
-import { CreateUserDto } from '../interfaces/user.interface';
-import { User } from '../interfaces/user.interface';
-import { userService } from '../services';
-import { logger } from '../utils/logger';
 import { ApiError } from '../exceptions/ApiError';
 import { HttpError } from '../exceptions/HttpError';
+import { emailService } from '../services/';
+import { sleep } from '../utils/util';
 
 class UtilController {
-  
-
   public sendContactForm = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      console.log('sendContactForm');      
+    try {    
+      await sleep(1000);
 
-      res.status(200).json({ data: { }, message: 'findOne' });
+      await emailService.sendContactEmail(req.body.email, req.body.name, req.body.phone, req.body.message);
+
+      res.status(200).json({ data: { sent: true }, message: 'ok' });
     } catch (err : any) {
       if (err instanceof HttpError)
         next(new ApiError(err.status, err.message));
@@ -23,10 +21,12 @@ class UtilController {
   };
 
   public subscribeNewsletter = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      console.log('subscribeNewsletter');      
+    try {     
+      await sleep(1000);
 
-      res.status(200).json({ data: { }, message: 'findOne' });
+      await emailService.sendNewNewsletterSubscriptionEmail(req.body.email);
+
+      res.status(200).json({ data: { sent: true }, message: 'ok' });
     } catch (err : any) {
       if (err instanceof HttpError)
         next(new ApiError(err.status, err.message));

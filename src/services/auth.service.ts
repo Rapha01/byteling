@@ -13,7 +13,7 @@ class AuthService {
   public async register(userData: CreateUserDto): Promise<User> {
     const createUserData = await userService.create(userData);
 
-    await emailService.sendRegisterMail(createUserData.id, createUserData.email, createUserData.email_verifycode);
+    await emailService.sendRegisterEmail(createUserData.id, createUserData.email, createUserData.email_verifycode);
 
     return createUserData;
   }

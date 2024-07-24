@@ -9,7 +9,7 @@
   <!--/.bg-holder-->
 
   <div class="container-medium position-relative z-5">
-    <h2 class="text-secondary-lighter fs-5 fs-md-3 fw-normal mb-3">Was ist ihr nächstes Projekt?</h2>
+    <h2 class="text-secondary-lighter fs-5 fs-md-3 fw-normal mb-3">Ihr Partner für einen gelungenen Online Auftritt</h2>
     <h1 class="fs-4 fs-md-1 text-white fw-normal mb-6 overflow-hidden"> 
       <span class="typed-text text-primary" data-typed-text="[
         
@@ -520,41 +520,67 @@
                 </div>
                 <div class="d-md-flex mb-6 align-items-center">
                   <div class="icon-wrapper shadow-info"><span class="uil uil-envelope text-primary fs-4 z-1 ms-2" data-bs-theme="light"></span></div>
-                  <div class="flex-1 ms-3"><a class="fw-semibold text-body" href="mailto:phoenix@email.com">office@byteling.com</a></div>
+                  <div class="flex-1 ms-3"><!--a class="fw-semibold text-body" href="mailto:">office (at) byteling.com</a-->office (at) byteling.com</div>
                 </div>
                 <!--div class="mb-6 d-md-flex align-items-center">
                   <div class="icon-wrapper shadow-info"><span class="uil uil-map-marker text-primary fs-4 z-1 ms-2" data-bs-theme="light"></span></div>
                   <div class="flex-1 ms-3"><a class="fw-semibold text-body" href="#!">39163 Amir Drive Suite 802</a></div>
                 </div-->
-                <div class="d-flex"><a href="#!"><span class="fa-brands fa-facebook fs-6 text-primary me-3"></span></a><a href="#!"><span class="fa-brands fa-twitter fs-6 text-primary me-3"></span></a><a href="#!"><span class="fa-brands fa-linkedin-in fs-6 text-primary"></span></a></div>
+                <!--div class="d-flex">
+                  <a href="#!"><span class="fa-brands fa-facebook fs-6 text-primary me-3"></span></a>
+                  <a href="#!"><span class="fa-brands fa-twitter fs-6 text-primary me-3"></span></a>
+                  <a href="#!"><span class="fa-brands fa-linkedin-in fs-6 text-primary"></span></a>
+                </div-->
               </div>
             </div>
             <div class="col-md-6 text-center text-md-start">
               <h3 class="mb-3">Schick uns eine Nachricht</h3>
               <p class="mb-7"><!-- subtext --></p>
-              <form class="row g-4">
+              <div class="row g-4">
                 <div class="col-12">
-                  <input class="form-control bg-body-emphasis" type="text" name="name" placeholder="Name" required="required" />
+                  <input class="form-control bg-body-emphasis" type="text" id="contact_name" placeholder="Name" required="required" />
                 </div>
                 <div class="col-12">
-                  <input class="form-control bg-body-emphasis" type="email" name="email" placeholder="Email" required="required" />
+                  <input class="form-control bg-body-emphasis" type="email" id="contact_email" placeholder="Email" required="required" />
                 </div>
                 <div class="col-12">
-                  <input class="form-control bg-body-emphasis" type="phone" name="phone" placeholder="Telephon" required="required" />
+                  <input class="form-control bg-body-emphasis" type="phone" id="contact_phone" placeholder="Telephon" required="required" />
                 </div>
                 <div class="col-12">
-                  <textarea class="form-control bg-body-emphasis" rows="4" name="message" placeholder="Message" required="required"></textarea>
+                  <textarea class="form-control bg-body-emphasis" rows="4" id="contact_message" placeholder="Message" required="required"></textarea>
                 </div>
                 <div class="col-12 d-grid">
-                  <button class="btn btn-outline-primary" type="submit">Submit</button>
+                  <button id="contactFormSubmitButton" class="btn btn-outline-primary" onclick="sendContactForm(event);">
+                    <div id="contactFormSubmitSpinner" class="spinner-border spinner-border-sm d-none" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <span id="contactFormSubmitText">Absenden</span>
+                  </button>
                 </div>
                 <div class="feedback"></div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
+      
+      <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="verticallyCenteredModalLabel">Vielen Dank für ihre Nachricht!</h5>
+              <button class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close"><span class="fas fa-times fs-9"></span></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-body-tertiary lh-lg mb-0">Wir werden uns ehestmöglich bei ihnen melden.</p>
+            </div>
+            <div class="modal-footer">
+              <!--button class="btn btn-primary" type="button">Okay</button-->
+              <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Schließen</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
@@ -574,11 +600,16 @@
                     <p class="mb-0">Professionell</p>
                   </div>
                   <h1 class="fs-6 fs-sm-4 fs-lg-2 fw-bolder lh-sm mb-3">Abonniere unseren<span class="gradient-text-primary mx-2">Newsletter</span><span></span></h1>
-                  <form class="d-flex justify-content-center mb-3 px-xxl-12">
+                  <div class="d-flex justify-content-center mb-3 px-xxl-12">
                     <div class="d-grid d-sm-block"></div>
-                    <input class="form-control me-3" id="ctaEmail1" type="email" placeholder="Email" aria-describedby="ctaEmail1" />
-                    <button class="btn btn-primary" type="submit">Subscribe</button>
-                  </form>
+                    <input class="form-control me-3" id="newsletter_email" type="email" placeholder="Email" aria-describedby="ctaEmail1" />
+                    <button id="newsletterFormSubmitButton" class="btn btn-primary" onclick="subscribeNewsletter(event);">
+                      <div id="newsletterFormSubmitSpinner" class="spinner-border spinner-border-sm d-none" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                      <span id="newsletterFormSubmitText">Abonnieren</span>
+                    </button>
+                  </div>
                   <p>Alle Neuigkeiten aus der Welt des Internets um ihrem Business den entscheidenden strategischen Vorteil zu verschaffen</p>
                 </div>
               </div>
@@ -588,6 +619,25 @@
         <!-- end of .container-->
 
       </section>
+
+      <div class="modal fade" id="newsletterFormModal" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="verticallyCenteredModalLabel">Vielen Dank für ihr Abonnement!</h5>
+              <button class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close"><span class="fas fa-times fs-9"></span></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-body-tertiary lh-lg mb-0">Sie erhalten nun alle wichtigen Informationen mit denen Sie ihrem Unternehmen den technologischen Vorteil verschaffen können.</p>
+            </div>
+            <div class="modal-footer">
+              <!--button class="btn btn-primary" type="button">Okay</button-->
+              <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Schließen</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
@@ -681,5 +731,5 @@
         </div>
       </div>
       
-
+      <script src="/site/assets/js/index.js"></script>
 <%- include('partials/footer'); %>

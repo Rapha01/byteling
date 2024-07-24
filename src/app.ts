@@ -9,6 +9,7 @@ import { Routes } from './interfaces/routes.interface';
 import authMiddleware from './middlewares/auth.middleware';
 import apiErrorMiddleware from './middlewares/api.error.middleware';
 import initVarsMiddleware from './middlewares/initVars.middleware';
+import routeLogMiddleware from './middlewares/route.log.middleware';
 import { logger } from './utils/logger';
 import routes from './routes';
 import path from 'path';
@@ -64,6 +65,7 @@ class App {
     //this.app.use(helmet());
     //this.app.use(compression());
     this.app.use(express.json());
+    this.app.use(routeLogMiddleware);
     this.app.use(initVarsMiddleware);
     this.app.use(cookieParser());
     this.app.use(authMiddleware);

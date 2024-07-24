@@ -3,7 +3,7 @@ import UtilController from '../controllers/api.util.controller';
 import { Routes } from '../interfaces/routes.interface';
 import validationMiddleware from '../middlewares/api.validation.middleware';
 import validate from '../middlewares/api.validation.middleware';
-import { changePasswordNew, changePasswordOld } from '../validators/user.validator';
+import { contactEmail, contactName, contactPhone, contactMessage, newNewsletterSubscriptionEmail } from '../validators/util.validator';
 
 class UtilApiRoute implements Routes {
   public path = '/util';
@@ -15,8 +15,8 @@ class UtilApiRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get(`${this.path}/sendContactForm`, this.utilController.sendContactForm);
-    this.router.get(`${this.path}/subscribeNewsletter`, this.utilController.subscribeNewsletter);
+    this.router.post(`${this.path}/sendContactForm`, validate([ contactEmail(), contactName(), contactPhone(), contactMessage() ]), this.utilController.sendContactForm);
+    this.router.post(`${this.path}/subscribeNewsletter`, validate([ newNewsletterSubscriptionEmail() ]), this.utilController.subscribeNewsletter);
   }
 }
 

@@ -1,10 +1,4 @@
 import { NextFunction, Request, Response } from 'express';
-import { logger } from '../utils/logger';
-import { Toast } from '../interfaces/util.interface';
-import { MyRequest } from '../interfaces/util.interface';
-
-import  { userModel } from "../models";
-import { CreateUserDto, User } from "../interfaces/user.interface"
 
 class SiteController {
   public index = (req: Request, res: Response, next: NextFunction) => {
