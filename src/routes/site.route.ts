@@ -9,6 +9,13 @@ class SiteRoute implements Routes {
 
   public subpaths = [
     { path: '', middlewares: [], controller: this.siteController.index },
+    { path: 'contact', middlewares: [], controller: this.siteController.contact },
+    { path: 'impressum', middlewares: [], controller: this.siteController.impressum },
+    { path: 'withdrawal', middlewares: [], controller: this.siteController.withdrawal },
+    { path: 'termsandconditions', middlewares: [], controller: this.siteController.termsandconditions },
+    { path: 'privacypolicy', middlewares: [], controller: this.siteController.privacypolicy },
+    { path: 'attribution', middlewares: [], controller: this.siteController.attribution },
+
     { path: 'register', middlewares: [], controller: this.siteController.register },
     { path: 'registersuccess', middlewares: [], controller: this.siteController.registerSuccess },
     { path: 'login', middlewares: [], controller: this.siteController.login },

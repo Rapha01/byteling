@@ -4,9 +4,7 @@ import { MyRequest } from '../interfaces/util.interface';
 
 const pathExceptions = [
     '/site/vendors/mapbox-gl/mapbox-gl.js.map',
-    '/site/vendors/typed.js/typed.umd.js.map',
-    '/android-chrome-512x512.png',
-    '/android-chrome-192x192.png'
+    '/site/vendors/typed.js/typed.umd.js.map'
 ];
 
 const routeLogMiddleware = async (req: Request, res: Response, next: NextFunction) => {

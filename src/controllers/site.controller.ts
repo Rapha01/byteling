@@ -5,6 +5,32 @@ class SiteController {
     res.render('site/index');
   };
   
+  public contact = (req: Request, res: Response, next: NextFunction) => {
+    res.render('site/index');
+  };
+
+  public impressum = (req: Request, res: Response, next: NextFunction) => {
+    res.render('site/impressum');
+  };
+
+  public withdrawal = (req: Request, res: Response, next: NextFunction) => {
+    res.render('site/withdrawal');
+  };
+
+  public termsandconditions = (req: Request, res: Response, next: NextFunction) => {
+    res.render('site/termsandconditions');
+  };
+
+  public privacypolicy = (req: Request, res: Response, next: NextFunction) => {
+    res.render('site/privacypolicy');
+  };
+
+  public attribution = (req: Request, res: Response, next: NextFunction) => {
+    res.render('site/attribution');
+  };
+
+
+
   public register = async (req: Request, res: Response, next: NextFunction) => {
     res.render('site/auth/register');
   };
@@ -27,6 +53,8 @@ class SiteController {
   public resetPassword = (req: Request, res: Response, next: NextFunction) => {
     res.render('site/auth/resetPassword');
   };
+
+
 
   public settings = (req: Request, res: Response, next: NextFunction) => {
     if (!res.locals.user)
