@@ -1,0 +1,55 @@
+<div class="modal fade" id="consentModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header d-block ">
+            <h5 class="modal-title" id="cookieconsentLabel3">Cookies & Privacy</h5>
+            <p>
+                This website uses cookies to ensure you get the best experience on our website.
+            </p>
+            <p>
+                <a href="/privacyPolicy">Read more about cookies</a>
+            </p>
+        </div>
+        <div class="modal-body">
+            <!-- Necessary checkbox -->
+            <div class="form-check">
+                <input class="form-check-input consentCheckbox" type="checkbox" value="" id="consent_necessary" checked disabled  />
+                <label class="form-check-label" for="necessary">
+                    <p>
+                        <strong>Necessary cookies</strong>
+                        <muted>help with the basic functionality of our website, e.g remember if you gave consent to cookies.</muted>
+                    </p>
+                </label>
+            </div>
+            <!-- Analytical checkbox -->
+            <div class="form-check">
+                <input class="form-check-input consentCheckbox" type="checkbox" value="" id="consent_analytical" checked />
+                <label class="form-check-label" for="analytical">
+                    <p>
+                        <strong>Analytical cookies</strong>
+                        <muted>make it possible to gather statistics about the use and trafiic on our website, so we can make it better.</muted>
+                    </p>
+                </label>
+            </div>
+            <!-- Marketing checkbox -->
+            <div class="form-check">
+                <input class="form-check-input consentCheckbox" type="checkbox" value="" id="consent_marketing" checked />
+                <label class="form-check-label" for="marketing">
+                    <p>
+                        <strong>Marketing cookies</strong>
+                        <muted>make it possible to show you more relevant social media content and advertisements on our website and other platforms.</muted>
+                    </p>
+                </label>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn btn-outline-primary" onclick="consentManager.tickAllCheckboxes()" type="button">Accept All</button>
+            <button class="btn btn-outline-primary" onclick="consentManager.untickAllCheckboxes()" type="button">Decline All</button>
+            <button class="btn btn-primary" onclick="consentManager.handleConsentSubmit()" type="button" data-bs-dismiss="modal">Accept Selected</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
