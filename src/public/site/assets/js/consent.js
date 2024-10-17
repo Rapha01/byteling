@@ -23,7 +23,7 @@ const consentManager = {
     };
     
     setCookie('consent', JSON.stringify(newConsentState), 180);
-    gtag('consent', 'update', newConsentState);
+    //gtag('consent', 'update', newConsentState);
   },
   showPopup: () => {
     const consentModal = new bootstrap.Modal('#consentModal', {});
