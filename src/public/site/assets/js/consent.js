@@ -1,7 +1,3 @@
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', consentManager.getSettings());
-
 const consentManager = {
   untickAllCheckboxes: () => {
     for (checkbox of document.querySelectorAll('.consentCheckbox'))
@@ -47,6 +43,9 @@ const consentManager = {
   }
 }
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', consentManager.getSettings());
 
 document.addEventListener("DOMContentLoaded", function(e) {
   if (getCookie('consent') == '')
