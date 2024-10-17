@@ -18,6 +18,7 @@ import UsersApiRoute from './routes/api.user.route';
 import AuthApiRoute from './routes/api.auth.route';
 import AdminSiteRoute from './routes/site.admin.route';
 import { Router } from 'express';
+import compression from 'compression';
 
 const router = Router();
 
@@ -40,6 +41,7 @@ class App {
 
   private async init() {
     //await initDatabase();
+    
     this.app.use(express.urlencoded({ extended: false }));
     this.app.set("views", path.join(__dirname, "../src/views"));
     this.app.set("view engine", "ejs");
@@ -62,7 +64,7 @@ class App {
     //this.app.use(morgan(LOG_FORMAT, { stream }));
     //this.app.use(hpp());
     //this.app.use(helmet());
-    //this.app.use(compression());
+    this.app.use(compression());
     this.app.use(express.json());
     this.app.use(routeLogMiddleware);
     this.app.use(initVarsMiddleware);
