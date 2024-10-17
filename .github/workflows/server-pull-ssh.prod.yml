@@ -23,3 +23,4 @@ jobs:
             docker compose -f docker-compose.yml -f docker-compose.prod.yml build web
             docker compose -f docker-compose.yml -f docker-compose.prod.yml down web
             docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d web
+            docker builder prune -f
