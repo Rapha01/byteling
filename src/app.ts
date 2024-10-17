@@ -18,8 +18,7 @@ import UsersApiRoute from './routes/api.user.route';
 import AuthApiRoute from './routes/api.auth.route';
 import AdminSiteRoute from './routes/site.admin.route';
 import { Router } from 'express';
-// 4
-console.log('__dirname', __dirname);
+
 const router = Router();
 
 logger.error('Testerror');
@@ -75,14 +74,15 @@ class App {
   private initializeRoutes() {
     for (const [key, value] of Object.entries(routes)) {
       //value.router.stack.forEach((stack) => console.log(stack.route.path));
-      this.app.use('/',value.router);
+      this.app.use(value.router);
+      if ('localizedRouter' in value) {
+        //value.localizedRouter.stack.forEach((stack) => console.log(stack.route.path));
+        this.app.use(value.localizedRouter);
+      }
     }
 
     for (const [key, value] of Object.entries(routes)) {
-      if ('localizedRouter' in value) {
-        //value.localizedRouter.stack.forEach((stack) => console.log(stack.route.path));
-        this.app.use('/',value.localizedRouter);
-      }
+      
     }
   }
 

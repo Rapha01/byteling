@@ -20,7 +20,7 @@ class AdminSiteRoute implements Routes {
   private initializeRoutes() {
     for (let subpath of this.subpaths) { 
       this.router.get(`/admin/${subpath.path}`, subpath.middlewares, subpath.controller);
-      this.localizedRouter.get(`/:locale/admin/${subpath.path}`, subpath.middlewares, subpath.controller);
+      //this.localizedRouter.get(`/:locale/admin/${subpath.path}`, subpath.middlewares, subpath.controller);
     }
   }
 }

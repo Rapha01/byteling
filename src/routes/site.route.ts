@@ -30,7 +30,7 @@ class SiteRoute implements Routes {
   private initializeRoutes() {
     for (let subpath of this.subpaths) { 
       this.router.get(`/${subpath.path}`, subpath.middlewares, subpath.controller);
-      this.localizedRouter.get(`/:locale/${subpath.path}`, subpath.middlewares, subpath.controller);
+      //this.localizedRouter.get(`/:locale/${subpath.path}`, subpath.middlewares, subpath.controller);
     }
   }
 }

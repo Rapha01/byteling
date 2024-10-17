@@ -29,6 +29,10 @@ class SiteController {
     res.render('site/attribution');
   };
 
+  public error_404 = (req: Request, res: Response, next: NextFunction) => {
+    res.render('error/404');
+  };
+
 
 
   public register = async (req: Request, res: Response, next: NextFunction) => {
@@ -53,8 +57,6 @@ class SiteController {
   public resetPassword = (req: Request, res: Response, next: NextFunction) => {
     res.render('site/auth/resetPassword');
   };
-
-
 
   public settings = (req: Request, res: Response, next: NextFunction) => {
     if (!res.locals.user)

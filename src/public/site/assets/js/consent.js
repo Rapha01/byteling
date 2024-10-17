@@ -1,18 +1,3 @@
-
-// Define dataLayer and the gtag function.
-/*window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-
-// Set default consent to 'denied' as a placeholder
-// Determine actual values based on your own requirements
-console.log('setting consent default');
-gtag('consent', 'default', {
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'analytics_storage': 'denied'
-});*/
-
 const consentManager = {
   untickAllCheckboxes: () => {
     for (checkbox of document.querySelectorAll('.consentCheckbox'))
@@ -24,25 +9,45 @@ const consentManager = {
         checkbox.checked = true;
   },
   handleConsentSubmit: () => {
-    console.log('handleConsentSubmit');
-    gtag('consent', 'update', {
-      'ad_storage': 'granted'
-    });
-
+    newConsentState = {
+      'functionality_storage': document.querySelector('#consent_necessary').checked ? 'granted' : 'denied',
+      'personalization_storage': document.querySelector('#consent_necessary').checked ? 'granted' : 'denied',
+      'security_storage': document.querySelector('#consent_necessary').checked ? 'granted' : 'denied',
+      'ad_storage': document.querySelector('#consent_marketing').checked ? 'granted' : 'denied',
+      'ad_user_data': document.querySelector('#consent_marketing').checked ? 'granted' : 'denied',
+      'ad_personalization': document.querySelector('#consent_marketing').checked ? 'granted' : 'denied',
+      'analytics_storage': document.querySelector('#consent_analytical').checked ? 'granted' : 'denied',
+    };
+    
+    setCookie('consent', JSON.stringify(newConsentState), 180);
+    gtag('consent', 'update', newConsentState);
   },
   showPopup: () => {
-    console.log('showPopup');
     const consentModal = new bootstrap.Modal('#consentModal', {});
     consentModal.show();
   },
   getSettings: () => {
-    console.log('getSettings');
-    
-    return null;
-  } 
+    if (getCookie('consent') == '') {
+      return {
+        'functionality_storage': 'denied',
+        'personalization_storage': 'denied',
+        'security_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      }
+    } else {
+      return JSON.parse(getCookie('consent'));
+    } 
+  }
 }
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', consentManager.getSettings());
+
 document.addEventListener("DOMContentLoaded", function(e) {
-  if (consentManager.getSettings() == null)
+  if (getCookie('consent') == '')
     consentManager.showPopup();
 });
